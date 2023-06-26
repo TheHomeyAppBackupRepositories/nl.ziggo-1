@@ -1,0 +1,19 @@
+{
+  "name": "nl.ziggo",
+  "version": "1.1.0",
+  "description": "Connect your Mediabox Next with Homey",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "mqtt": "^3.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
