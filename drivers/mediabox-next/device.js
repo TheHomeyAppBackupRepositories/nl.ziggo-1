@@ -47,11 +47,13 @@ module.exports = class MediaboxNextDevice extends Homey.Device {
     } = message;
 
     if (deviceType === 'STB') {
-      if (state.startsWith('OFFLINE'))
+      if (state.startsWith('ONLINE_STANDBY')) {
         this.setCapabilityValue('onoff', false).catch(this.error);
-
-      if (state.startsWith('ONLINE'))
-        this.setCapabilityValue('onoff', true).catch(this.error);
+      } else if (state.startsWith('OFFLINE')) {
+        this.setCapabilityValue('onoff', false).catch(this.error);
+      } else if (state.startsWith('ONLINE')) {
+        this.setCapabilityValue('onoff', true).catch(this.error)
+      };
     }
   }
 
